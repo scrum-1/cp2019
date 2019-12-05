@@ -1,0 +1,6 @@
+ flask
+ bs4
+ lxml
+ mardown
+ pelican
+ flask_cors
