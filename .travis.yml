@@ -12,4 +12,5 @@ after_success:
   - cd blog
   - git add ./
   - git -c user.name="Travis CI for Scrum-1" -c user.email="<scrum1>@mde.tw" commit -m 'Travis update Pelican blog'
+  - cd ..
   - git push https://github.com/scrum-1/cp2019.git
