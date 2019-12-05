@@ -4,9 +4,12 @@ os: linux
 sudo: required
 python: "3.7"
 dist: xenial
-install:
+before_install:
   - pip install -r requirements.txt -U
-script:
+install:
   - pelican markdown -o blog -s publishconf.py
 after_success:
-  - codecov # submit coverage
+  - if [[ "$TRAVIS_REPO_SLUG" == "scrum-1/cp2019" && -n "$TRAVIS_TAG" ]]; then
+	ghp-import -n blog
+	@git push -fq https://${GH_TOKEN}@github.com/$(TRAVIS_REPO_SLUG).git master > /dev/null
+  fi
