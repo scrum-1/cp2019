@@ -8,3 +8,5 @@ before_install:
   - pip install -r requirements.txt -U
 install:
   - pelican markdown -o blog -s publishconf.py
+after_success:
+  - codecov # submit coverage  
