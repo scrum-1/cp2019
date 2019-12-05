@@ -9,4 +9,7 @@ before_install:
 install:
   - pelican markdown -o blog -s publishconf.py
 after_success:
-  - @git push -fq https://${GH_TOKEN}@github.com/$(TRAVIS_REPO_SLUG).git > /dev/null
+  - cd blog
+  - git add ./
+  - git -c user.name="Travis CI for Scrum-1" -c user.email="<scrum1>@mde.tw" commit -m 'Travis update Pelican blog'
+  - git push https://${GH_TOKEN}@github.com/scrum-1/cp2019.git master
