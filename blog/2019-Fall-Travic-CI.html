@@ -228,25 +228,28 @@ init_mathjax();
 
 <h2>.travis.yml</h2>
 <pre class="brush: jscript">
-# Travis-CI for CMSiMDE site
-# Disable sudo to speed up the build
-sudo: false
-
-# Set the build language to Python
+# Travis-CI yaml setting for CMSiMDE site
 language: python
-
-# Set the python version to 3.7
-python: 3.7
-
-# Install the codecov pip dependency
-before_install:
-  - pip install -r requirements.txt -U
-
+os: linux
+sudo: required
+python: "3.7"
+dist: xenial
 install:
+  - pip install -r requirements.txt -U
+script:
   - pelican markdown -o blog -s publishconf.py
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
+  keep_history: true
+  target_branch: master
+  on:
+    branch: master
 </pre>
 
 <h2>requirements.txt</h2>
+<p>假如也要使用 Travis CI/CD 處理網頁與 Reveal 簡報, 則需要納入 CMSiMDE 所需要的 Python 模組, 然後設法利用 markdown 檔案處理網頁與簡報.</p>
 <pre class="brush: jscript">
  flask
  bs4
