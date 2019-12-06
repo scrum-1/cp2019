@@ -1,4 +1,4 @@
-# Travis-CI for CMSiMDE site
+# Travis-CI yaml setting for CMSiMDE site
 language: python
 os: linux
 sudo: required
