@@ -1,5 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>CP 2019 Scrum-1 - Misc</title><link href="https://scrum-1.github.io/cp2019/blog/" rel="alternate"></link><link href="https://scrum-1.github.io/cp2019/blog/feeds/misc.atom.xml" rel="self"></link><id>https://scrum-1.github.io/cp2019/blog/</id><updated>2019-10-31T11:10:00+08:00</updated><entry><title>嵌入 Dartpad</title><link href="https://scrum-1.github.io/cp2019/blog/embedded-darpad-to-blog.html" rel="alternate"></link><published>2019-10-31T11:10:00+08:00</published><updated>2019-10-31T11:10:00+08:00</updated><author><name>yen</name></author><id>tag:scrum-1.github.io,2019-10-31:/cp2019/blog/embedded-darpad-to-blog.html</id><summary type="html">&lt;p&gt;在此利用 https://dartpad.github.io 將位於 downloads 目錄中的 dart 程式導入.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>CP 2019 Scrum-1 - Misc</title><link href="https://scrum-1.github.io/cp2019/blog/" rel="alternate"></link><link href="https://scrum-1.github.io/cp2019/blog/feeds/misc.atom.xml" rel="self"></link><id>https://scrum-1.github.io/cp2019/blog/</id><updated>2019-12-06T11:00:00+08:00</updated><entry><title>2019 Fall 使用 Travis CI</title><link href="https://scrum-1.github.io/cp2019/blog/2019-Fall-Travic-CI.html" rel="alternate"></link><published>2019-12-06T11:00:00+08:00</published><updated>2019-12-06T11:00:00+08:00</updated><author><name>yen</name></author><id>tag:scrum-1.github.io,2019-12-06:/cp2019/blog/2019-Fall-Travic-CI.html</id><summary type="html">&lt;p&gt;透過 Travis CI 建立遠端 Pelican Blog&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;透過 Travis CI 建立遠端 Pelican Blog&lt;/p&gt;
+
+
+&lt;h2&gt;.travis.yml&lt;/h2&gt;
+&lt;pre class="brush: jscript"&gt;
+# Travis-CI for CMSiMDE site
+# Disable sudo to speed up the build
+sudo: false
+
+# Set the build language to Python
+language: python
+
+# Set the python version to 3.7
+python: 3.7
+
+# Install the codecov pip dependency
+before_install:
+  - pip install -r requirements.txt -U
+
+install:
+  - pelican markdown -o blog -s publishconf.py
+&lt;/pre&gt;
+
+&lt;h2&gt;requirements.txt&lt;/h2&gt;
+&lt;pre class="brush: jscript"&gt;
+ flask
+ bs4
+ lxml
+ mardown
+ pelican
+ flask_cors
+&lt;/pre&gt;</content><category term="Misc"></category><category term="2019FallCP"></category></entry><entry><title>嵌入 Dartpad</title><link href="https://scrum-1.github.io/cp2019/blog/embedded-darpad-to-blog.html" rel="alternate"></link><published>2019-10-31T11:10:00+08:00</published><updated>2019-10-31T11:10:00+08:00</updated><author><name>yen</name></author><id>tag:scrum-1.github.io,2019-10-31:/cp2019/blog/embedded-darpad-to-blog.html</id><summary type="html">&lt;p&gt;在此利用 https://dartpad.github.io 將位於 downloads 目錄中的 dart 程式導入.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;在此利用 https://dartpad.github.io 將位於 downloads 目錄中的 dart 程式導入.&lt;/p&gt;
 
 
@@ -36,7 +68,7 @@ document.getElementById("iframe").height = 600 ;
 
 &lt;!-- 內建放入的 Dart 原始碼 --&gt;
 
-&lt;iframe id="iframe" src="https://dartpad.github.io/embed-dart.html?gh_owner=mdecourse&amp;gh_repo=cp2019&amp;gh_path=downloads/dart_ex/mass_spring_damping&amp;theme=dark" width="800" height="600"&gt;&lt;/iframe&gt;</content><category term="2019FallCP"></category></entry><entry><title>2019 Fall CP 課程 test</title><link href="https://scrum-1.github.io/cp2019/blog/2019-Fall-Win10-1903.html" rel="alternate"></link><published>2019-10-30T11:00:00+08:00</published><updated>2019-10-30T11:00:00+08:00</updated><author><name>yen</name></author><id>tag:scrum-1.github.io,2019-10-30:/cp2019/blog/2019-Fall-Win10-1903.html</id><summary type="html">&lt;p&gt;2019 Fall 一開始, 1903 版的 Windows 10 就大舉更新, 除了逐步去掉先前許多舊版的設定視窗, 也將系統的指令搜尋與 App 應用程式進行綁定. 許多採用可攜設定的程式執行流程, 隨著更新進程的推展, 必須因應修改才可以正常運作.&lt;/p&gt;
+&lt;iframe id="iframe" src="https://dartpad.github.io/embed-dart.html?gh_owner=mdecourse&amp;gh_repo=cp2019&amp;gh_path=downloads/dart_ex/mass_spring_damping&amp;theme=dark" width="800" height="600"&gt;&lt;/iframe&gt;</content><category term="Misc"></category><category term="2019FallCP"></category></entry><entry><title>2019 Fall CP 課程 test</title><link href="https://scrum-1.github.io/cp2019/blog/2019-Fall-Win10-1903.html" rel="alternate"></link><published>2019-10-30T11:00:00+08:00</published><updated>2019-10-30T11:00:00+08:00</updated><author><name>yen</name></author><id>tag:scrum-1.github.io,2019-10-30:/cp2019/blog/2019-Fall-Win10-1903.html</id><summary type="html">&lt;p&gt;2019 Fall 一開始, 1903 版的 Windows 10 就大舉更新, 除了逐步去掉先前許多舊版的設定視窗, 也將系統的指令搜尋與 App 應用程式進行綁定. 許多採用可攜設定的程式執行流程, 隨著更新進程的推展, 必須因應修改才可以正常運作.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;2019 Fall 一開始, 1903 版的 Windows 10 就大舉更新, 除了逐步去掉先前許多舊版的設定視窗, 也將系統的指令搜尋與 App 應用程式進行綁定. 許多採用可攜設定的程式執行流程, 隨著更新進程的推展, 必須因應修改才可以正常運作.&lt;/p&gt;
 
 
@@ -121,4 +153,4 @@ if PLAT_WIN
 &lt;!-- for LaTeX equations --&gt;
 &lt;script src="https://scrum-3.github.io/web/math/MathJax.js?config=TeX-MML-AM_CHTML" type="text/javascript"&gt;&lt;/script&gt;
 
-&lt;/pre&gt;</content><category term="2019FallCP"></category></entry></feed>
+&lt;/pre&gt;</content><category term="Misc"></category><category term="2019FallCP"></category></entry></feed>
