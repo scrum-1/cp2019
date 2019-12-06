@@ -8,9 +8,10 @@ install:
   - pip install -r requirements.txt -U
 script:
   - pelican markdown -o blog -s publishconf.py
-after_success:
-  - cd blog
-  - git add ./
-  - git -c user.name="Scrum-1" -c user.email="scrum1@mde.tw" commit -m 'Travis update Pelican blog'
-  - cd ..
-  - @git push -fq https://${GITHUB_TOKEN}@github.com/$(TRAVIS_REPO_SLUG).git master > /dev/null
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
+  keep_history: true
+  on:
+    branch: master
