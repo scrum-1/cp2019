@@ -11,6 +11,6 @@ script:
 after_success:
   - cd blog
   - git add ./
-  - git -c user.name="Travis CI for Scrum-1" -c user.email="<scrum1>@mde.tw" commit -m 'Travis update Pelican blog'
+  - git -c user.name="Scrum-1" -c user.email="scrum1@mde.tw" commit -m 'Travis update Pelican blog'
   - cd ..
   - @git push -fq https://${GITHUB_TOKEN}@github.com/$(TRAVIS_REPO_SLUG).git master > /dev/null
